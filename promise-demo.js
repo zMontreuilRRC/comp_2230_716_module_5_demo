@@ -7,6 +7,7 @@ let myValue = "old value";
 // Promise arg: "executor"
 // resolve and reject: pre-built methods
 const myPromise = new Promise((resolve, reject) => {
+    // promise callback method immediately runs
     console.log("started");
 
     setTimeout(() => {
@@ -19,7 +20,9 @@ const myPromise = new Promise((resolve, reject) => {
     }, 6000)
 });
 
+// .then method invokes when Promise invokes resolve()
 myPromise.then(function(result) {
+    // argument of resolve is assigned 
     dataWindow.textContent = result;
     console.log(myValue);
 });
