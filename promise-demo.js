@@ -21,11 +21,18 @@ const myPromise = new Promise((resolve, reject) => {
 });
 
 // .then method invokes when Promise invokes resolve()
-myPromise.then(function(result) {
+myPromise.then(
+    // resolve function
+    function(result) {
     // argument of resolve is assigned 
-    dataWindow.textContent = result;
-    console.log(myValue);
-});
+        dataWindow.textContent = result;
+        console.log(myValue);
+    },
+        // reject function
+    function(rejection) {
+        // only runs if the promise's "reject" method is invoked
+    }
+);
 
 const helloButton = document.querySelector("#hello-button");
 
